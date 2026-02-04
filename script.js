@@ -57,22 +57,6 @@ function floatingHearts() {
         setTimeout(() => heart.remove(), 4000);
     }, 350);
 }
-const yesBtn = document.getElementById("yesBtn");
-const music = document.getElementById("loveMusic");
-
-yesBtn.addEventListener("click", () => {
-
-    // 💘 Change background
-    document.body.classList.add("romantic-bg");
-
-    // 🎵 Play music
-    music.currentTime = 0;
-    music.play().catch(() => {});
-
-    // 💫 Spawn floating hearts
-    spawnHearts();
-});
-
 
 // Countdown to Feb 14
 function updateCountdown() {
@@ -119,20 +103,3 @@ document.addEventListener("mousemove", (e) => {
 
     setTimeout(() => ice.remove(), 1000);
 });
-function spawnHearts() {
-    setInterval(() => {
-        const heart = document.createElement("div");
-        heart.classList.add("heart");
-        heart.innerHTML = "💖";
-
-        heart.style.left = Math.random() * 100 + "vw";
-        heart.style.bottom = "0px";
-
-        document.body.appendChild(heart);
-
-        setTimeout(() => {
-            heart.remove();
-        }, 4000);
-
-    }, 300);
-}
