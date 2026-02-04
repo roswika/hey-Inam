@@ -8,7 +8,7 @@ const countdown = document.getElementById("countdown");
 
 // Move NO button playfully, but always visible
 noBtn.addEventListener("mouseover", () => {
-    const padding = 10; // keep a little space from edges
+    const padding = 10; 
     const maxX = window.innerWidth - noBtn.offsetWidth - padding;
     const maxY = window.innerHeight - noBtn.offsetHeight - padding;
 
@@ -17,8 +17,8 @@ noBtn.addEventListener("mouseover", () => {
 
     noBtn.style.left = randomX + "px";
     noBtn.style.top = randomY + "px";
+    noBtn.style.transform = `rotate(${(Math.random() - 0.5) * 30}deg)`;
 });
-
 
 // Heart burst
 function heartBurst(x, y) {
@@ -36,10 +36,7 @@ function heartBurst(x, y) {
         heart.animate([
             { transform: "translate(0,0)", opacity: 1 },
             { transform: `translate(${randomX}px, ${randomY}px)`, opacity: 0 }
-        ], {
-            duration: 2000,
-            easing: "ease-out"
-        });
+        ], { duration: 2000, easing: "ease-out" });
 
         document.body.appendChild(heart);
         setTimeout(() => heart.remove(), 2000);
@@ -82,7 +79,6 @@ loveNoteBtn.addEventListener("click", () => {
 
 // YES button event
 yesBtn.addEventListener("click", () => {
-
     const rect = yesBtn.getBoundingClientRect();
     const x = rect.left + rect.width / 2;
     const y = rect.top + rect.height / 2;
@@ -96,7 +92,6 @@ yesBtn.addEventListener("click", () => {
 
 // Ice cream cursor trail
 document.addEventListener("mousemove", (e) => {
-
     const ice = document.createElement("div");
     ice.classList.add("cursor-icecream");
     ice.innerHTML = "🍦";
@@ -108,22 +103,3 @@ document.addEventListener("mousemove", (e) => {
 
     setTimeout(() => ice.remove(), 1000);
 });
-// Optional: add tiny wiggle on hover too
-noBtn.addEventListener("mouseover", () => {
-    const padding = 10;
-    const maxX = window.innerWidth - noBtn.offsetWidth - padding;
-    const maxY = window.innerHeight - noBtn.offsetHeight - padding;
-
-    const randomX = Math.random() * maxX;
-    const randomY = Math.random() * maxY;
-
-    noBtn.style.left = randomX + "px";
-    noBtn.style.top = randomY + "px";
-
-    // tiny rotation for extra teasing
-    noBtn.style.transform = `rotate(${(Math.random() - 0.5) * 30}deg)`;
-});
-
-
-
-
