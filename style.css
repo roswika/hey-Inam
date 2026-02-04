@@ -4,13 +4,6 @@ body {
     transition: background 1s ease;
     font-family: Arial, sans-serif;
 }
-body.romantic-bg {
-    background:
-        radial-gradient(circle at 20% 30%, #ff9a9e, transparent 40%),
-        radial-gradient(circle at 80% 70%, #fad0c4, transparent 40%),
-        #1a001a;
-}
-
 
 /* Romantic aesthetic background */
 body.romantic-bg {
