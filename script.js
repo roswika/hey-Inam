@@ -57,6 +57,22 @@ function floatingHearts() {
         setTimeout(() => heart.remove(), 4000);
     }, 350);
 }
+const yesBtn = document.getElementById("yesBtn");
+const music = document.getElementById("loveMusic");
+
+yesBtn.addEventListener("click", () => {
+
+    // 💘 Change background
+    document.body.classList.add("romantic-bg");
+
+    // 🎵 Play music
+    music.currentTime = 0;
+    music.play().catch(() => {});
+
+    // 💫 Spawn floating hearts
+    spawnHearts();
+});
+
 
 // Countdown to Feb 14
 function updateCountdown() {
