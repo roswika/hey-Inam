@@ -119,3 +119,20 @@ document.addEventListener("mousemove", (e) => {
 
     setTimeout(() => ice.remove(), 1000);
 });
+function spawnHearts() {
+    setInterval(() => {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.innerHTML = "💖";
+
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.bottom = "0px";
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 4000);
+
+    }, 300);
+}
